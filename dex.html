@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Portofolio Tim Proyek</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        header {
+            background-image: url('images/TIF22.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: zoomInOut 10s infinite;
+            min-height: 330px; 
+        }
+
+        @keyframes zoomInOut {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+
+        }
+        
+        header h1, header p {
+            font-family: 'Arial Bold', 'system-ui';
+            color: yellow;
+            text-shadow: 
+                2px 2px 0 #fff, 
+                -2px -2px 0 #fff, 
+                2px -2px 0 #fff, 
+                -2px 2px 0 #fff, 
+                4px 4px 0 #fff, 
+                -4px -4px 0 #fff, 
+                4px -4px 0 #fff, 
+                
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(2, 2, 172, 0.756); /* Transparansi */
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #2f14f7;
+            transform: scale(1.1);
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .profile img {
+            width: 180px;
+            height: 180px;
+            border-radius: 0;
+            margin-bottom: 10px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        ul li a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        ul li a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 80%;
+            margin: 10px auto;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f4f4f4;
+        }
+
+        .ketua, .anggota {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .anggota {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #007bff;
+            color: white;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            margin-top: 20px;
+        }
+
+        .section-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2, h3 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px; /* Space below the form */
+        }
+
+        label {
+            margin-top: 10px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 5px;
+            font-size: 16px;
+            width: 100%; /* Full width */
+        }
+
+        button.btn {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button.btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Contact Info Styling */
+        .contact-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .contact-info ul {
+            list-style-type: none;
+            padding: 0;
+            display: inline-block; /* Centers the list items */
+            text-align: left; /* Aligns text to the left within the list */
+        }
+
+        .contact-info li {
+            margin: 10px 0;
+            font-size: 18px;
+            display: flex; /* Use flex for alignment */
+            align-items: center; /* Center items vertically */
+        }
+
+        .contact-info a {
+            color: #007BFF;
+            text-decoration: none;
+            display: inline-flex; /* Aligns icon and text vertically */
+            align-items: center; /* Centers content vertically */
+            margin-left: 8px; /* Space between icon and text */
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Icon Styling */
+        .contact-info i {
+            font-size: 20px;
+            color: #007BFF; /* Icon color */
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            .anggota {
+                flex-direction: column;
+            }
+
+            table {
+                width: 100%;
+            }
+        }
+
+        /* Floating Image Styles */
+        .floating-image {
+            position: fixed; /* Change from absolute to fixed */
+            top: 50px;
+            left: 50px;
+            width: 50px;
+            height: 50px;
+            transition: transform 0.1s ease;
+            pointer-events: none; /* Ensures the image does not block interactions */
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kelompok 5</h1>
+        <p>Portofolio Yang Paling Top-Top Saja</p>
+
+
+    </header>
+
+    <nav>
+        <a href="#ketua">Ketua Kelompok</a>
+        <a href="#anggota">Anggota Kelompok</a>
+    </nav>
+
+    <main>
+        <section id="ketua">
+            <h2>Ketua Kelompok</h2>
+            <div class="profile">
+                <img src="images/ketua.png" alt="Foto Ketua Kelompok">
+                <h3>Hizkia Imanuel Simanjuntak</h3>
+                <h3>202255202057</h3>
+                <p>Deskripsi singkat tentang Ketua, keahlian, dan perannya dalam tim.</p>
+                <ul>
+                    <li>Email: <a href="mailto:hizkiasimanjuntak67@gmail.com">hizkiasimanjuntak67@gmail.com</a></li>
+                    <li>GitHub: <a href="https://github.com/nuel071003/202255202057-Hizkia-I-S" target="_blank">nuel071003</a></li>
+                </ul>
+                <h3>Keterampilan</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Keterampilan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Mempunyai Jiwa Kepimpinan</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Jago dalam Bermatematika</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Komentator Sepak Bola</td>
+                        <tr>
+                            <td>4</td>
+                            <td>Menyanyi</td>
+                        </tr>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Proyek</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Nama Proyek</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Website Presensi Unamin</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Website E-Commerse Makaspa</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Implementasi Meachine Learning Prediksi Keseluruhan Pemain Sepak Bola Menggunakan Random Forest</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        
+        <section id="anggota">
+            <h2>Anggota Kelompok</h2>
+            <div class="anggota">
+                <!-- Anggota 1 -->
+                <div class="profile">
+                    <img src="images\MOB.JPG.jpg" alt="Foto Anggota 1">
+                    <h3>Ahmad Sudrajat Dani Kalami</h3>
+                    <h3>202255202023</h3>
+                    <p>Deskripsi singkat tentang anggota 1, keahlian, dan perannya dalam tim.</p>
+                    <ul>
+                        <li>Email: <a href="rezakalami026@gmail.com">rezakalami026@gmail.com</a></li>
+                        <li>GitHub: <a href="https://github.com/AhmadRezaKalami022" target="_blank">GitHub</a></li>
+                    </ul>
+
+                    <h3>Keterampilan</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Keterampilan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Desain Grafis</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>CRUD</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Pro Player R6S</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Proyek</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Nama Proyek</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Development Game Fantasy Puzzle</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Redaktur Berita Kampus UNAMIN</td>
+                            <tr>
+                                <td>3</td>
+                                <td>Sistem Penerimaan Mahasiswa Baru Berbasis C+</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Anggota 2 -->
+                <div class="profile">
+                    <img src="images/nisa.jpeg" alt="Foto Anggota 2">
+                    <h3>Annisa Iriani Tawainella </h3>
+                    <h3>202255202081</h3>
+                    <p>Deskripsi singkat tentang anggota 2, keahlian, dan perannya dalam tim.</p>
+
+                    <h3>Keterampilan</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Keterampilan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Main Game</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Public Speaking</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Proyek</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Nama Proyek</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Implementasi Sistem Pakar Klasifikasi Kualitas Beras Menggunakan CNN Berbasis Android</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Website Portofolio</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Pengembangan sistem chatbot edukasi pengetahuan hewan laut yang dilindungi papua menggunakan metode LLM</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Analisis kepuasan pelanggan pada marketplace Tokopedia menggunakan naive bayes</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>deteksi jenis penyakit jambu air menggunakan yolov8</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Anggota 3 -->
+                <div class="profile">
+                    <img src="images/braken.JPG" alt="Foto Anggota 3">
+                    <h3>Brayen Syahputra</h3>
+                    <p>Deskripsi singkat tentang anggota 3, keahlian, dan perannya dalam tim.</p>
+
+                    <h3>Keterampilan</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Keterampilan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Main game</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Designer</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Proyek</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Nama Proyek</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Analisis prediksi kebangkrutan perusahaan menggunakan metode KNN</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Membuat project game Edu-Learn</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Anggota 4 -->
+                <div class="profile">
+                    <img src="images/desyia.jpeg" alt="Foto Anggota 4">
+                    <h3>Desyia Tatuhey</h3>
+                    <h3>202255202091</h3>
+                    <p>Deskripsi singkat tentang anggota 4, keahlian, dan perannya dalam tim.</p>
+
+                    <h3>Keterampilan</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Keterampilan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Bernyanyi</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Mendengarkan Musik</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Bermain Bulu Tangkis</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Proyek</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Nama Proyek</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>website peminjaman buku perpustakaan</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Website PAPUA TADISIONAL CLOTHES</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>engembangan Filter Instagram Berbasis AR sebagai Promosi Inovatif pada UMKM Va’s Cake & Cookies</td>
+                            </tr>                            
+                        </tbody>
+                    </table>
+                </div>
+
+               <!-- Anggota 5 -->
+               <div class="profile">
+                <img src="images/julita.PNG" alt="Foto Anggota 5">
+                <h3>Julita Tandi M</h3>
+                <h3>202255202094</h3>  
+                <p>Deskripsi singkat tentang anggota 5, keahlian, dan perannya dalam tim.</p>
+
+                <h3>Keterampilan</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Keterampilan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Bernyanyi</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Bermain musik</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Proyek</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Nama Proyek</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Website TODOLIST</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>pengaruh lingkungan terhadap nilai pelajar menggunakan metode k-means</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>membuat projects website RS</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+               <!-- Anggota 6 -->
+               <div class="profile">
+                <img src="images/ano.jpeg" alt="Foto Anggota 6">
+                <h3>Marciano Sawael</h3>
+                <h3>202255202l23</h3>
+                <p>Deskripsi singkat tentang anggota 6, keahlian, dan perannya dalam tim.</p>
+
+                <h3>Keterampilan</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Keterampilan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Futsal</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Sepak Bola</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Docker</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Proyek</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Nama Proyek</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Membuat projects Website Rumah Sakit</td>
+                    </tbody>
+                </table>
+            </div>
+
+               <!-- Anggota 7 -->
+               <div class="profile">
+                <img src="images/haidir.jpeg" alt="Foto Anggota 7">
+                <h3>Muhammad Chaidir Boyratan</h3>
+                <h3>201955202023</h3>
+                <p>Deskripsi singkat tentang anggota 7, keahlian, dan perannya dalam tim.</p>
+
+                <h3>Keterampilan</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Keterampilan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Main game</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Front End Developer</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Docker</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Proyek</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Nama Proyek</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Website E-Commerce Noken Dikota sorong</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Website Portofolio</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Sistem Pakar Kerusakan Jaringan Menggunakan Algoritma Forward Chaining Berbasis Android</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+               <!-- Anggota 8 -->
+               <div class="profile">
+                <img src="images/Siti.jpeg" alt="Foto Anggota 8">
+                <h3>Siti Kharomah</h3>
+                <h3>202255202001</h3>
+                <p>Deskripsi singkat tentang anggota 8, keahlian, dan perannya dalam tim.</p>
+
+                <h3>Keterampilan</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Keterampilan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Main Pianika</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Fasih Membaca Qur'an</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Nge-bike / bikers</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Proyek</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Nama Proyek</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Mendeteksi Penyakit jantung Menggunakan metode KNN</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Website Portofolio</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Website Mengenal buah-buahan</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+               <!-- Anggota 9 -->
+               <div class="profile">
+                <img src="images/icha.jpeg" alt="Foto Anggota 9">
+                <h3>Wa Ode Faizah Zahra Nadira</h3>
+                <h3>202255202067</h3>
+                <p>Deskripsi singkat tentang anggota 9, keahlian, dan perannya dalam tim.</p>
+
+                <h3>Keterampilan</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Keterampilan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Suka Memasak</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Suka Berdansa</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Proyek</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Nama Proyek</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Augmented Reality UMKM Senja Kopi</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+                <!-- Anggota 10 -->
+                <div class="profile">
+                    <img src="images/putri.jpeg" alt="Foto Anggota 10">
+                    <h3>Yunitha</h3>
+                    <p>Deskripsi singkat tentang anggota 10, keahlian, dan perannya dalam tim.</p>
+
+                    <h3>Keterampilan</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Keterampilan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Java</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Spring Boot</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Database Management</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Proyek</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Nama Proyek</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Sistem Reservasi Hotel</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Manajemen Inventaris</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Aplikasi Keuangan</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="section-container">
+                <h2>Kontak Kami</h2>
+                <form action="#" method="post">
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Pesan:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <button type="submit" class="btn">Kirim</button>
+                </form>
+        
+                <!-- Additional Contact Information -->
+                <div class="contact-info">
+                    <h3>Hubungi Kami Melalui:</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-envelope"></i> <!-- Email Icon -->
+                            <a href="mailto:tiunamin22@gmail.com">tiunamin22@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp"></i> <!-- WhatsApp Icon -->
+                            <a href="https://wa.me/6282198424487" target="_blank">0821-9842-4487</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-instagram"></i> <!-- Instagram Icon -->
+                            <a href="https://www.instagram.com/engginering_informatica" target="_blank">@engineering_informatics22</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Kelompok 5. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
